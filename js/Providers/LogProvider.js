@@ -101,7 +101,7 @@ export class LogProvider extends EventEmitter {
 			this.cachedSettings.levels = levelsString;
 		}
 		return $.ajax({
-			type: 'PUT',
+			type: 'POST',
 			url: OC.generateUrl('/apps/logreader/levels'),
 			data: {levels: levelsString}
 		});
@@ -124,7 +124,7 @@ export class LogProvider extends EventEmitter {
 
 	setRelative (relative) {
 		return $.ajax({
-			type: 'PUT',
+			type: 'POST',
 			url: OC.generateUrl('/apps/logreader/relative'),
 			data: {relative}
 		});
@@ -132,7 +132,7 @@ export class LogProvider extends EventEmitter {
 
 	setLive (live) {
 		return $.ajax({
-			type: 'PUT',
+			type: 'POST',
 			url: OC.generateUrl('/apps/logreader/live'),
 			data: {live}
 		});

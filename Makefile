@@ -11,7 +11,7 @@ webpack=node_modules/.bin/webpack
 jssources=$(wildcard js/*) $(wildcard js/*/*) $(wildcard css/*/*)  $(wildcard css/*)
 othersources=$(wildcard appinfo/*) $(wildcard css/*/*) $(wildcard controller/*/*) $(wildcard templates/*/*) $(wildcard log/*/*)
 
-all: build/main.js
+all: build/main.js release
 
 clean:
 	rm -rf $(build_dir)
@@ -48,3 +48,5 @@ build/appstore/$(package_name).tar.gz: build/main.js $(othersources)
 	-cvzf $(appstore_dir)/$(package_name).tar.gz $(project_dir)
 	openssl dgst -sha512 -sign $(cert_dir)/$(app_name).key $(appstore_dir)/$(app_name).tar.gz | openssl base64
 
+release:
+	zip -r release.zip . -x "tests/*" ".github/*" "node_modules/*"

@@ -16,7 +16,7 @@ return ['routes' => [
 	['name' => 'log#search', 'url' => '/search', 'verb' => 'GET'],
 	['name' => 'log#getSettings', 'url' => '/settings', 'verb' => 'GET'],
 	['name' => 'log#getLevels', 'url' => '/levels', 'verb' => 'GET'],
-	['name' => 'log#setLevels', 'url' => '/levels', 'verb' => 'PUT'],
-	['name' => 'log#setRelative', 'url' => '/relative', 'verb' => 'PUT'],
-	['name' => 'log#setLive', 'url' => '/live', 'verb' => 'PUT'],
+	['name' => 'log#setLevels', 'url' => '/levels', 'verb' => 'POST'],
+	['name' => 'log#setRelative', 'url' => '/relative', 'verb' => 'POST'],
+	['name' => 'log#setLive', 'url' => '/live', 'verb' => 'POST'],
 ]];
